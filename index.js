@@ -23,6 +23,7 @@ setInterval(function(){
     character.style.bottom = y + 'px'
 }, 1)
 
+
 document.addEventListener('keydown', function(e){
     if(e.repeat) return;
 
@@ -38,8 +39,18 @@ document.addEventListener('keydown', function(e){
     if(e.key === 'ArrowDown'){
         direction = 'south'
     }
+    callback(direction)
 })
 
+function moveWithArrowKeys(left, bottom, callback){
+    let direction = null;
+    let x = left;
+    let y = bottom;
+}
+document.addEventListener('keyup', function(e){
+    direction=null
+    callback(direction)
+})
 
 move(character).to(100, 250)
 
